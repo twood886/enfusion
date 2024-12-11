@@ -10,6 +10,7 @@
 #'  This is the output of launch_enfusion.
 #' @importFrom httr GET
 #' @importFrom readr read_csv
+#' @export
 get_enfusion_report <- function(reportWebServiceURL, enfusion_process) { #nolint
   if (is.null(enfusion_process)) {
     stop("No Enfusion Process Added")

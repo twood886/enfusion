@@ -6,6 +6,7 @@
 #' @importFrom processx process
 #' @import RDCOMClient
 #' @include get_enfusion_log.R
+#' @export
 launch_enfusion <- function(
   username,
   password,

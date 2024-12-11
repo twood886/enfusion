@@ -7,14 +7,16 @@
 get_enfusion_report(reportWebServiceURL, enfusion_process)
 }
 \arguments{
-\item{reportWebServiceURL}{The Enfusion Report URL. Same as the one used when downloading
-reports in Excel.}
+\item{reportWebServiceURL}{The Enfusion Report URL.
+Same as the one used when downloading reports in Excel.}
 
-\item{enfusion_process}{A processx process for Enfusion.exe. This is the output of launch_enfusion.}
+\item{enfusion_process}{A processx process for Enfusion.exe.
+This is the output of launch_enfusion.}
 }
 \description{
-This function downloads Enfusion reports using the same API as the
- Enfusion Excel Add-In. This cicumvents the need to use the REST API which is
- an additional cost the Enfusion License. It requires logging into the enfusion application
- which can be accomplished using the launch_enfusion function.
+This function downloads Enfusion reports using the same API as
+ the Enfusion Excel Add-In. This cicumvents the need to use the REST API
+ which is an additional cost the Enfusion License. It requires logging into
+ the enfusion application which can be accomplished using the launch
+ enfusion function.
 }
