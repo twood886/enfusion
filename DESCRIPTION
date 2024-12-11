@@ -9,3 +9,9 @@ Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.3.2.9000
+Collate: 
+    'get_enfusion_log.R'
+    'get_enfusion_report.R'
+    'launch_enfusion.R'
+    'test.R'
