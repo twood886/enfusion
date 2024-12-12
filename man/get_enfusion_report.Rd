@@ -20,3 +20,9 @@ This function downloads Enfusion reports using the same API as
  the enfusion application which can be accomplished using the launch
  enfusion function.
 }
+\examples{
+library(enfusion)
+enfusion_process <- launch_enfusion("username", "password")
+reportWebServiceURL <- "https://webservices.enfusionsystems.com/mobile/rest/reportservice/exportReport?name=test.trb"
+get_enfusion_report(reportWebServiceURL, enfusion_process)
+}

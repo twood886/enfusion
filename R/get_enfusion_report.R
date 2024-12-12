@@ -12,6 +12,11 @@
 #' @importFrom readr read_csv
 #' @importFrom dplyr if_all
 #' @importFrom dplyr everything
+#' @examples
+#' library(enfusion)
+#' enfusion_process <- launch_enfusion("username", "password")
+#' reportWebServiceURL <- "https://webservices.enfusionsystems.com/mobile/rest/reportservice/exportReport?name=test.trb"
+#' get_enfusion_report(reportWebServiceURL, enfusion_process)
 #' @export
 get_enfusion_report <- function(reportWebServiceURL, enfusion_process) { #nolint
   if (is.null(enfusion_process)) {
