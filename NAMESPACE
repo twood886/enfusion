@@ -3,6 +3,8 @@
 export(get_enfusion_report)
 export(launch_enfusion)
 import(RDCOMClient)
+importFrom(dplyr,everything)
+importFrom(dplyr,if_all)
 importFrom(httr,GET)
 importFrom(processx,process)
 importFrom(readr,read_csv)

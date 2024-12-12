@@ -53,6 +53,8 @@ launch_enfusion <- function(
   # Insert Password and press enter
   shell$AppActivate(pid)
   shell$SendKeys(paste0("{TAB}", password, "{ENTER}"))
+  shell$SendKeys("% n")
+
   # Check if Enfusion has loaded
   login_load <- FALSE
   t_1 <- Sys.time()
@@ -62,5 +64,6 @@ launch_enfusion <- function(
       stop("Error Loading Enfusion - Final")
     }
   }
+
   return(process)
 }

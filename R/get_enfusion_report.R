@@ -10,6 +10,8 @@
 #'  This is the output of launch_enfusion.
 #' @importFrom httr GET
 #' @importFrom readr read_csv
+#' @importFrom dplyr if_all
+#' @importFrom dplyr everything
 #' @export
 get_enfusion_report <- function(reportWebServiceURL, enfusion_process) { #nolint
   if (is.null(enfusion_process)) {
@@ -34,5 +36,5 @@ get_enfusion_report <- function(reportWebServiceURL, enfusion_process) { #nolint
   response <- httr::GET(report_url)
   if (response$status != 200) stop("No Response from Enfusion")
   raw_data <- readr::read_csv(report_url, show_col_types = FALSE)
-  return(na.omit(raw_data))
+  return(raw_data[rowSums(is.na(raw_data)) != ncol(raw_data), ])
 }
