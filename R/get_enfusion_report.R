@@ -6,8 +6,6 @@
 #'  enfusion function.
 #' @param reportWebServiceURL The Enfusion Report URL.
 #'  Same as the one used when downloading reports in Excel.
-#' @param enfusion_process A processx process for Enfusion.exe.
-#'  This is the output of launch_enfusion.
 #' @importFrom httr GET
 #' @importFrom readr read_csv
 #' @importFrom dplyr if_all
@@ -18,18 +16,22 @@
 #' reportWebServiceURL <- "https://webservices.enfusionsystems.com/mobile/rest/reportservice/exportReport?name=test.trb"
 #' get_enfusion_report(reportWebServiceURL, enfusion_process)
 #' @export
-get_enfusion_report <- function(reportWebServiceURL, enfusion_process) { #nolint
-  if (is.null(enfusion_process)) {
-    stop("No Enfusion Process Added")
+get_enfusion_report <- function(reportWebServiceURL) { #nolint
+  if (!check_enfusion_connection()) {
+    stop("Enfusion is not Running")
   }
 
-  if (!any(class(enfusion_process) == "process")) {
-    stop("enfusion_process is not 'process' object")
-  }
+  #if (is.null(enfusion_process)) {
+  #  stop("No Enfusion Process Added")
+  #}
 
-  if (!enfusion_process$get_status() == "running") {
-    stop("enfusion_process is not running")
-  }
+  #if (!any(class(enfusion_process) == "process")) {
+  #  stop("enfusion_process is not 'process' object")
+  #}
+
+  #if (!enfusion_process$get_status() == "running") {
+  #  stop("enfusion_process is not running")
+  #}
 
   # Change Web Service URL from rest API to app
   report_url <- gsub(

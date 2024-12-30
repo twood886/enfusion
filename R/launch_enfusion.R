@@ -3,6 +3,7 @@
 #' @param username Enfusion Username
 #' @param password Enfusion Password
 #' @param enfusion_path Path to Enfusion.exe
+#' @param check_existing Bool to check if existing before launching new
 #' @importFrom processx process
 #' @import RDCOMClient
 #' @include get_enfusion_log.R
@@ -10,8 +11,13 @@
 launch_enfusion <- function(
   username,
   password,
-  enfusion_path = file.path("C:", "Program Files", "Enfusion")
+  enfusion_path = file.path("C:", "Program Files", "Enfusion"),
+  check_existing = TRUE
 ) {
+  if (check_existing) {
+    
+  }
+
   library(RDCOMClient)
   # Create WScript Shell to send commands to Enfusion Login Page
   shell <- RDCOMClient::COMCreate("WScript.Shell")
