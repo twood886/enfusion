@@ -7,6 +7,7 @@
 #' @importFrom processx process
 #' @import RDCOMClient
 #' @include get_enfusion_log.R
+#' @include check_enfusion_connection.R
 #' @export
 launch_enfusion <- function(
   username,
@@ -15,7 +16,9 @@ launch_enfusion <- function(
   check_existing = TRUE
 ) {
   if (check_existing) {
-    
+    if (check_enfusion_connection()) {
+      return(NULL)
+    }
   }
 
   library(RDCOMClient)
