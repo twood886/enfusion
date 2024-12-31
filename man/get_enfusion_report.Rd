@@ -4,14 +4,11 @@
 \alias{get_enfusion_report}
 \title{Download Enfusion Report Using API from Excel Add-In}
 \usage{
-get_enfusion_report(reportWebServiceURL, enfusion_process)
+get_enfusion_report(reportWebServiceURL)
 }
 \arguments{
 \item{reportWebServiceURL}{The Enfusion Report URL.
 Same as the one used when downloading reports in Excel.}
-
-\item{enfusion_process}{A processx process for Enfusion.exe.
-This is the output of launch_enfusion.}
 }
 \description{
 This function downloads Enfusion reports using the same API as

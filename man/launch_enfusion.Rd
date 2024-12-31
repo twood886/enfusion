@@ -7,7 +7,8 @@
 launch_enfusion(
   username,
   password,
-  enfusion_path = file.path("C:", "Program Files", "Enfusion")
+  enfusion_path = file.path("C:", "Program Files", "Enfusion"),
+  check_existing = TRUE
 )
 }
 \arguments{
@@ -16,6 +17,8 @@ launch_enfusion(
 \item{password}{Enfusion Password}
 
 \item{enfusion_path}{Path to Enfusion.exe}
+
+\item{check_existing}{Bool to check if existing before launching new}
 }
 \description{
 Launch Enfusion Integrata using user name and password
